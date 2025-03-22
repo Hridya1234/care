@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Available Caregiver Profiles</title>
+    <link rel="stylesheet" href="profile.css">
+    <link rel="stylesheet" href="responsive.css">
+
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <img src="./img/logo.png" alt="Logo" class="logo">
+            <button class="call-button">Call us at +91 8547490471</button>
+        </div>
+    </header>
+
+    <!-- Filter Section -->
+    <section class="filter-section">
+        <h2>Filter Profiles</h2>
+        <form id="filter-form">
+            <!-- Place Filter -->
+            <label for="place-filter">Place:</label>
+            <select id="place-filter">
+                <option value="">All Places</option>
+            </select>
+
+            <!-- Gender Filter -->
+            <label>Gender:</label>
+            <div class="gender-filter">
+                <input type="radio" id="male" name="gender" value="Male">
+                <label for="male">Male</label>
+                <input type="radio" id="female" name="gender" value="Female">
+                <label for="female">Female</label>
+                <input type="radio" id="other" name="gender" value="Other">
+                <label for="other">Other</label>
+            </div>
+
+            <!-- Age Filter -->
+            <label for="min-age">Age Range:</label>
+            <div style="display: flex; gap: 10px;">
+                <input type="number" id="min-age" placeholder="Min Age" min="18">
+                <input type="number" id="max-age" placeholder="Max Age" min="18">
+            </div>
+
+            <!-- Experience Filter (Dropdown) -->
+<label for="experience-filter">Experience:</label>
+<select id="experience-filter">
+    <option value="">Any</option>
+    <option value="Less than 1 year">Less than 1 year</option>
+    <option value="1-3 years">1-3 years</option>
+    <option value="3-5 years">3-5 years</option>
+    <option value="More than 5 years">More than 5 years</option>
+</select>
+
+<!-- Working Hours Filter (Dropdown) -->
+<label for="working-hours-filter">Working Hours:</label>
+<select id="working-hours-filter">
+    <option value="">Any</option>
+    <option value="Morning (8AM - 12PM)">Morning (8AM - 12PM)</option>
+    <option value="Afternoon (12PM - 4PM)">Afternoon (12PM - 4PM)</option>
+    <option value="Evening (4PM - 8PM)">Evening (4PM - 8PM)</option>
+    <option value="Full Day (8AM - 8PM)">Full Day (8AM - 8PM)</option>
+</select>
+
+
+            <!-- Salary Filter -->
+            <label for="min-salary">Salary (₹):</label>
+            <div style="display: flex; gap: 10px;">
+                <input type="number" id="min-salary" placeholder="Min Salary">
+                <input type="number" id="max-salary" placeholder="Max Salary">
+            </div>
+
+            <!-- Sort Dropdown -->
+            <label for="sort-dropdown">Sort Profiles:</label>
+            <select id="sort-dropdown">
+                <option value="">Sort by</option>
+                <option value="age:asc">Age (Low to High)</option>
+                <option value="age:desc">Age (High to Low)</option>
+                <option value="experience:asc">Experience (Low to High)</option>
+                <option value="experience:desc">Experience (High to Low)</option>
+                <option value="salary:asc">Salary (Low to High)</option>
+                <option value="salary:desc">Salary (High to Low)</option>
+            </select>
+        </form>
+    </section>
+
+    <!-- Profiles Section -->
+    <main>
+        <h2>Available Profiles</h2>
+        <div class="profile-container"></div>
+    </main>
+
+    <!-- Pagination Container -->
+    <div class="pagination-container"></div>
+
+    <!-- Profile Script -->
+    <script src="profile.js"></script>
+</body>
+</html>

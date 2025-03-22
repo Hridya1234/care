@@ -1,0 +1,254 @@
+/* General Body Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 90px 0 0 0; /* Adjust for fixed header */
+    background-color: #f9f9f9;
+    text-align: center;
+    display: flex;
+    justify-content: flex-start; /* Align from top */
+    align-items: center; /* Center horizontally */
+    flex-direction: column;
+    min-height: 100vh;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+html {
+    scroll-behavior: smooth; /* Smooth scrolling */
+}
+
+
+
+/* Header Styles */
+header {
+    background-color: #4CAF50; /* Primary green */
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.logo {
+    max-height: 50px;
+    width: auto;
+}
+
+.call-button {
+    background-color: white;
+    color: #4CAF50; /* Primary green */
+    padding: 0.7rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-left: 100px;
+}
+
+.call-button:hover {
+    background-color: #e8f5e9; /* Light green hover */
+    color: #388e3c; /* Darker green hover */
+}
+
+/* Filter Section */
+.filter-section {
+    margin-top: 80px; /* Adjusted margin to account for fixed header */
+    padding: 20px;
+    width: 100%;
+    background-color: #e8f5e9; /* Lighter shade of green for the filter section */
+    border-radius: 8px;
+    display: flex; /* Use flexbox to align items */
+    justify-content: center; /* Center items horizontally */
+    align-items: center; /* Center items vertically */
+    flex-direction: column; /* Stack filter elements vertically */
+}
+
+.filter-section h2 {
+    color: #4CAF50; /* Primary green */
+    margin-bottom: 20px;
+}
+
+.filter-section form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%; /* Ensure form takes full width of its container */
+    max-width: 400px; /* Limit form width for better readability */
+}
+
+.filter-section label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    text-align: left; /* Align labels to the left */
+    width: 100%; /* Ensure label takes full width of its container */
+}
+
+.filter-section select,
+.filter-section .gender-filter {
+    margin-bottom: 15px;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    width: 100%; /* Ensure select and gender filter take full width */
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+    border: 1px solid #ccc; /* Added a subtle border for better definition */
+}
+
+/* Gender Filter */
+.filter-section .gender-filter {
+    display: flex;
+    justify-content: center; /* Centers the items horizontally */
+    gap: 20px; /* Adds spacing between radio buttons */
+}
+
+.filter-section .gender-filter input {
+    margin-right: 5px; /* Space between the radio button and label */
+}
+
+/* Profile Section */
+main {
+    margin-top: 20px; /* Add some space between filter and profiles */
+    padding: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the profile container */
+}
+
+main h2 {
+    color: #4CAF50; /* Primary green */
+    font-size: 2rem;
+    margin-bottom: 30px;
+    text-align: center; /* Center the heading */
+    width: 100%; /* Ensure heading takes full width */
+}
+
+/* Profile Cards */
+.profile-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 0 20px;
+    width: 100%; /* Ensure profile container takes full width */
+    max-width: 1200px; /* Optional: set a maximum width for the profile container */
+}
+
+.profile-card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    opacity: 0;
+    text-align: left;
+    border-top: 3px solid #4CAF50; /* Added a subtle green border at the top */
+}
+
+.profile-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Popping Animation */
+@keyframes pop {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.profile-card.pop {
+    animation: pop 0.5s forwards;
+}
+
+/* Avatar Circle */
+.profile-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #4CAF50; /* Primary green */
+    color: white;
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+/* Profile Card Text */
+.profile-card h3 {
+    color: #4CAF50; /* Primary green */
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.profile-card p {
+    color: #555;
+    font-size: 1rem;
+    margin: 5px 0;
+}
+
+/* Button Styling */
+.book-now-button {
+    background-color: #4CAF50; /* Primary green */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 20px;
+    width: fit-content; /* Make the button width fit its content */
+}
+
+.book-now-button:hover {
+    background-color: #388e3c; /* Darker green hover */
+}
+/* Optional: Prevent content hiding under header */
+body {
+    padding-top: 90px; /* Adjust if header height changes */
+}
+
+/* Button click effect */
+.book-now-button:active {
+    transform: scale(0.95);
+}
+
+/* Smooth hover transition and shadow */
+.profile-card {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.profile-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    border-top: 3px solid #388e3c; /* Focus effect */
+}
+.profile-card:hover {
+    border-top: 3px solid #388e3c; /* Darker green */
+}
+.profile-card {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.profile-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+.book-now-button:active {
+    transform: scale(0.95);
+}
