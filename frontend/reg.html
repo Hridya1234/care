@@ -17,22 +17,21 @@
     </header>
     
     <main>
-        <button id="loved-one-btn" class="response-button">A Parent or Loved One</button>
-<button id="me-btn" class="response-button">Me</button>
-
-<div id="care-seeker-form" class="form-container" style="display: none;">
-    <h2 id="form-title">Care Seeker Registration</h2>
-    <form id="care-seeker-form-data">
-        <input type="hidden" id="care-type" value=""> <!-- Hidden field to track type -->
-        <input type="text" id="care-name" placeholder="Name" required><br>
-        <input type="email" id="care-email" placeholder="Email" required><br>
-        <input type="text" id="care-phone" placeholder="Phone Number" required><br>
-        <input type="text" id="care-place" placeholder="Place" required><br>
-        <button type="submit" class="submit-button">Register</button>
-    </form>
-</div>
-
+        <div id="care-seeker-form" class="form-container">
+            <h2 id="form-title">Care Seeker Registration</h2>
+            <form id="care-seeker-form-data">
+                <input type="hidden" id="care-type" value="" />
+                <input type="text" id="care-name" placeholder="Name" required />
+                <input type="email" id="care-email" placeholder="Email" required />
+                <input type="text" id="care-phone" placeholder="Phone" required />
+                <input type="text" id="care-place" placeholder="Place" required />
+                <button type="submit" class="submit-button">Register</button>
+            </form>
+            
+            
+        </div>
     </main>
+    
 
     <script src="reg.js"></script>
 </body>

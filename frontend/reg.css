@@ -105,3 +105,18 @@ a {
 .form-container {
     text-align: left;
 }
+button.submit-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s;
+}
+
+button.submit-button:hover {
+    background-color: #45a049;
+}

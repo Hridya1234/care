@@ -12,9 +12,11 @@ app.use(cors());
 app.use(bodyParser.json());
 
 // ✅ MongoDB connection
-mongoose.connect('mongodb://127.0.0.1:27017/hackathon')
-    .then(() => console.log('✅ Connected to MongoDB'))
-    .catch(err => console.error('❌ MongoDB connection error:', err));
+mongoose.connect('mongodb://127.0.0.1:27017/hackathon', {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+}).then(() => console.log('✅ Connected to MongoDB'))
+  .catch(err => console.error('❌ MongoDB connection error:', err));
 
 // ✅ Serve static files from frontend folder
 app.use(express.static(path.join(__dirname, '../frontend')));
@@ -42,13 +44,12 @@ const Profile = mongoose.model('Profile', ProfileSchema);
 
 // Care Seeker Schema
 const CareSeekerSchema = new mongoose.Schema({
-    type: String, // Add this line
+    type: String,
     name: String,
     email: String,
     phone: String,
     place: String
 });
-
 const CareSeeker = mongoose.model('CareSeeker', CareSeekerSchema);
 
 // ================================
@@ -123,28 +124,32 @@ app.get('/api/profiles', async (req, res) => {
     }
 });
 
-
-
-
 // ✅ Add Care Seeker with Type
 app.post('/api/add-care-seeker', async (req, res) => {
     try {
         const { type, name, email, phone, place } = req.body;
 
-        // Validation
         if (!name || !email || !phone || !place || !type) {
             return res.status(400).send('❌ All fields are required.');
         }
 
-        // Save care seeker with type
+        // Check for duplicate entry
+        const existingUser = await CareSeeker.findOne({ email });
+        if (existingUser) {
+            return res.status(409).send('❌ Care seeker already registered with this email.');
+        }
+
+        // Save care seeker
         const careSeeker = new CareSeeker({ type, name, email, phone, place });
         await careSeeker.save();
-        res.status(201).send('✅ Care Seeker registered successfully!');
+        res.status(201).send('✅ Care Seeker Registered Successfully!');
     } catch (err) {
         console.error('❌ Registration Error:', err);
-        res.status(500).send('Error: ' + err.message);
+        res.status(500).send('❌ Error: ' + err.message);
     }
 });
+
+
 
 
 // ✅ Get All Care Seekers
@@ -157,6 +162,7 @@ app.get('/api/care-seekers', async (req, res) => {
         res.status(500).send('Error: ' + err.message);
     }
 });
+
 // ✅ Get Care Seekers Grouped by Type
 app.get('/api/grouped-care-seekers', async (req, res) => {
     try {
@@ -169,7 +175,6 @@ app.get('/api/grouped-care-seekers', async (req, res) => {
         res.status(500).send('Error: ' + err.message);
     }
 });
-
 
 // ✅ Get All Job Seekers
 app.get('/api/job-seekers', async (req, res) => {
@@ -186,7 +191,7 @@ app.get('/api/job-seekers', async (req, res) => {
 app.get('/api/places', async (req, res) => {
     try {
         const places = await Profile.distinct('place');
-        console.log('📍 Places Fetched:', places); // Debug
+        console.log('📍 Places Fetched:', places);
         res.json(places);
     } catch (err) {
         console.error('❌ Error fetching places:', err);

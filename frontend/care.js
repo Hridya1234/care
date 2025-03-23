@@ -32,3 +32,17 @@ function goBack() {
         <p>Please select an option above to get started.</p>
     `;
 }
+// Function to save selected type (Loved One or Me)
+function saveCareType(type) {
+    localStorage.setItem('careType', type); // Save to localStorage
+    window.location.href = 'reg.html'; // Redirect to registration page
+}
+
+// Add event listeners to buttons
+document.querySelectorAll('.response-button').forEach(button => {
+    button.addEventListener('click', (e) => {
+        const type = e.target.innerText === 'A Parent or Loved One' ? 'Loved One' : 'Self';
+        saveCareType(type);
+    });
+});
+
