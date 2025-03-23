@@ -14,11 +14,12 @@ document.getElementById('care-seeker-form-data').addEventListener('submit', asyn
     console.log('✅ Sending data:', user); // Log data before sending
 
     try {
-        const response = await fetch('http://localhost:5000/api/add-care-seeker', {
+        const response = await fetch('http://192.168.1.4:5000/api/add-care-seeker', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(user)
         });
+        
 
         console.log('✅ Data sent successfully!');
         console.log('Response Status:', response.status);

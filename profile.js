@@ -29,7 +29,8 @@ document.addEventListener('DOMContentLoaded', () => {
         filters.limit = 6; // Profiles per page
         if (sort) filters.sort = sort;
         const params = new URLSearchParams(filters);
-        let url = `http://localhost:5000/api/profiles?${params.toString()}`;
+        let url = `http://192.168.1.4:5000/api/profiles?${params.toString()}`;
+
 
         try {
             console.log("Fetching profiles with filters:", filters);
