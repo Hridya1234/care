@@ -6,10 +6,10 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.appendChild(paginationContainer);
 
     async function populatePlaceDropdown() {
-        try {
-            const response = await fetch('http://localhost:5000/api/places');
-            const places = await response.json();
-            const placeDropdown = document.getElementById('place-filter');
+        try {const response = await fetch('http://<your-ip>:5000/api/places');
+
+        const places = await response.json();
+        const placeDropdown = document.getElementById('place-filter');
 
             places.forEach(place => {
                 const option = document.createElement('option');
@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
         filters.limit = 6; // Profiles per page
         if (sort) filters.sort = sort;
         const params = new URLSearchParams(filters);
-        let url = `http://192.168.1.4:5000/api/profiles?${params.toString()}`;
+        let url = `http://<your-ip>:5000/api/profiles?${params.toString()}`;
 
 
         try {
