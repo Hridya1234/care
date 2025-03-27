@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="responsive.css" />
+    <link rel="stylesheet" href="admin.css" />
+</head>
+
+<body>
+    <div class="container">
+        <h1>👩‍💼 Admin Dashboard</h1>
+
+        <!-- Care Seekers Table -->
+        <h2>📄 Registered Care Seekers</h2>
+
+        <h3>👨‍👩‍👧‍👦 Loved One</h3>
+        <table id="loved-one-table" border="1">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Place</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+
+        <h3>🤗 Self</h3>
+        <table id="self-table" border="1">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Place</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+
+        <!-- Job Seekers Table -->
+        <h2>📄 Registered Job Seekers</h2>
+        <table id="job-seekers-table" border="1">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Place</th>
+                    <th>Gender</th>
+                    <th>Experience</th>
+                    <th>Working Hours</th>
+                    <th>Salary</th>
+                </tr>
+            </thead>
+            <tbody id="job-seekers-body"></tbody>
+        </table>
+
+        <!-- Booking Details Table -->
+        <h2>📚 Booking Details</h2>
+        <table id="bookings-table" border="1">
+            <thead>
+                <tr>
+                    <th>Care Seeker Name</th>
+                    <th>Job Seeker Name</th>
+                    <th>Place</th>
+                    <th>Booking Date</th>
+                </tr>
+            </thead>
+            <tbody id="bookings-body"></tbody>
+        </table>
+    </div>
+
+    <!-- Include JavaScript -->
+    <script src="admin.js"></script>
+</body>
+
+</html>

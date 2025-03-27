@@ -6,7 +6,6 @@
     <title>Care Seeker Registration</title>
     <link rel="stylesheet" href="reg.css">
     <link rel="stylesheet" href="responsive.css">
-
 </head>
 <body>
     <header>
@@ -20,19 +19,19 @@
         <div id="care-seeker-form" class="form-container">
             <h2 id="form-title">Care Seeker Registration</h2>
             <form id="care-seeker-form-data">
-                <input type="hidden" id="care-type" value="" />
+                <!-- Hidden input to store care type -->
+                <input type="hidden" id="care-type" name="type" value="">
+
                 <input type="text" id="care-name" placeholder="Name" required />
                 <input type="email" id="care-email" placeholder="Email" required />
                 <input type="text" id="care-phone" placeholder="Phone" required />
                 <input type="text" id="care-place" placeholder="Place" required />
                 <button type="submit" class="submit-button">Register</button>
             </form>
-            
-            
         </div>
     </main>
-    
 
+    <!-- ✅ Include External JavaScript -->
     <script src="reg.js"></script>
 </body>
 </html>

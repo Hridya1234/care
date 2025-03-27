@@ -270,7 +270,7 @@ main {
     color: #388e3c;
 }
 .faq {
-    padding: 3rem;
+    padding: 0;
     background-color: #f9f9f9;
 }
 
@@ -278,11 +278,11 @@ main {
     font-size: 2rem;
     color: #4CAF50;
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: 0;
 }
 
 .faq-item {
-    margin-bottom: 1.5rem;
+    margin-bottom: 0;
 }
 
 .faq-item h3 {

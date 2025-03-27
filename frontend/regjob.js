@@ -26,7 +26,8 @@ document.getElementById('job-form').addEventListener('submit', async function (e
     };
 
     try {
-        const response = await fetch('http://192.168.1.4:5000/api/add-job-seeker', {
+        const response = await fetch('http://localhost:5000/api/add-job-seeker', { // Remove extra /
+
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(profile)

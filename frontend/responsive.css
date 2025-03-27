@@ -1,0 +1,191 @@
+/* ===================================
+📱 General Mobile Styles
+====================================== */
+@media (max-width: 768px) {
+    body {
+        padding-top: 60px;
+        font-size: 14px;
+    }
+
+    header {
+        flex-direction: column;
+        align-items: center;
+        padding: 0.8rem 1rem;
+    }
+
+    .logo {
+        max-height: 40px;
+    }
+
+    .call-button {
+        margin-top: 10px;
+        font-size: 0.9rem;
+    }
+
+    .form-container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    input,
+    select,
+    button {
+        width: 100%;
+        font-size: 14px;
+    }
+
+    .profile-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .profile-card {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    .pagination-container button {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+
+    .filter-section {
+        padding: 15px;
+    }
+
+    .filter-section form {
+        width: 100%;
+    }
+
+    .filter-section label {
+        font-size: 14px;
+    }
+
+    .testimonial-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .testimonial {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+
+/* ===================================
+📱 Small Mobile Screens
+====================================== */
+@media (max-width: 480px) {
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .response-button,
+    .back-button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .profile-container {
+        padding: 10px;
+    }
+
+    .pagination-container {
+        display: flex;
+        justify-content: center;
+        gap: 5px;
+    }
+
+    .call-button {
+        padding: 0.6rem 1.2rem;
+    }
+
+    .info-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .info-image {
+        width: 100%;
+        height: auto;
+    }
+
+    .info-text {
+        text-align: center;
+    }
+
+    .cta-button {
+        width: 100%;
+        padding: 12px;
+        font-size: 16px;
+    }
+
+    .testimonial p {
+        font-size: 14px;
+    }
+
+    .faq-item {
+        padding: 10px;
+    }
+
+    .faq h3 {
+        font-size: 16px;
+    }
+}
+
+/* ===================================
+📚 Tablet Styles (Medium Devices)
+====================================== */
+@media (min-width: 481px) and (max-width: 768px) {
+    .profile-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+    }
+
+    .info-content {
+        flex-direction: column;
+    }
+
+    .testimonial-container {
+        grid-template-columns: 1fr;
+    }
+
+    .cta-button {
+        width: 100%;
+        padding: 10px;
+    }
+}
+
+/* ===================================
+💻 Large Screens and Desktops
+====================================== */
+@media (min-width: 769px) {
+    .profile-container {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+
+    .info-content {
+        display: flex;
+        gap: 20px;
+    }
+
+    .testimonial-container {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .testimonial {
+        width: 48%;
+    }
+
+    .cta-button {
+        width: auto;
+        padding: 12px 24px;
+    }
+
+    .faq-item {
+        padding: 15px;
+    }
+}
